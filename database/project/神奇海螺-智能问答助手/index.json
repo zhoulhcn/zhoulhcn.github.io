@@ -1,0 +1,6 @@
+{
+  "title": "神奇海螺-智能问答助手",
+  "remark": "基于amazon bedrock的Claude3模型，用于解决内部员工的常见问题",
+  "link": "https://chat.bees360.com/",
+  "sort": 5
+}
