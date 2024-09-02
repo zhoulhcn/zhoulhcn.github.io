@@ -1,37 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" href="/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
-  <title>The Matrix Lite</title>
-  <script type="module" crossorigin src="/assets/index-BQXm6FxJ.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-D5J6Uw7w.css">
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/micro-vue-static/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+  <title>Sub Vue</title>
+  <script crossorigin="">import('/assets/index-Ct6TisQj.js').finally(() => {
+            
+    const qiankunLifeCycle = window.moudleQiankunAppLifeCycles && window.moudleQiankunAppLifeCycles['micro-vue'];
+    if (qiankunLifeCycle) {
+      window.proxy.vitemount((props) => qiankunLifeCycle.mount(props));
+      window.proxy.viteunmount((props) => qiankunLifeCycle.unmount(props));
+      window.proxy.vitebootstrap(() => qiankunLifeCycle.bootstrap());
+      window.proxy.viteupdate((props) => qiankunLifeCycle.update(props));
+    }
+  
+          })</script>
+  <link rel="stylesheet" crossorigin="" href="/assets/index-C4h2d6In.css">
 </head>
 
 <body>
-  <div id="app"></div>
+  <div id="sub-vue"></div>
   <script src="//at.alicdn.com/t/c/font_4649636_riwf5y9zfq.js"></script>
-  <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4649636_riwf5y9zfq.css" />
-  <!-- 引入Cesium.js-CDN模式 -->
-  <!-- <script src="https://cesium.com/downloads/cesiumjs/releases/1.104/Build/Cesium/Cesium.js"></script>
-    <link
-      href="https://cesium.com/downloads/cesiumjs/releases/1.104/Build/Cesium/Widgets/widgets.css"
-      rel="stylesheet"
-    /> -->
-  <!-- 引入Cesium热力图插件 -->
-  <!-- <script src="/lab-static/scripts/cesium-heatmap.js"></script> -->
-
+  <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4649636_riwf5y9zfq.css">
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QH1EWLJCM9"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QH1EWLJCM9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-QH1EWLJCM9');
   </script>
-</body>
 
-</html>
+
+<script>
+  const createDeffer = (hookName) => {
+    const d = new Promise((resolve, reject) => {
+      window.proxy && (window.proxy[`vite${hookName}`] = resolve)
+    })
+    return props => d.then(fn => fn(props));
+  }
+  const bootstrap = createDeffer('bootstrap');
+  const mount = createDeffer('mount');
+  const unmount = createDeffer('unmount');
+  const update = createDeffer('update');
+
+  ;(global => {
+    global.qiankunName = 'micro-vue';
+    global['micro-vue'] = {
+      bootstrap,
+      mount,
+      unmount,
+      update
+    };
+  })(window);
+</script></body></html>

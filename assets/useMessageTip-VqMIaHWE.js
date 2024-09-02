@@ -1,1 +1,0 @@
-import{T as f,L as n,x as e}from"./index-BQXm6FxJ.js";function c(){const{deviceType:i}=f();function o(){i.value==n.MOBILE&&e.info("双指移动,单指旋转")}function s(){i.value==n.MOBILE&&e.info("暂未做移动端兼容，请使用PC端访问")}function a(){i.value==n.MOBILE?e.info("单击方块触发绘制"):e.info("双击方块触发绘制")}return{showThreeJSTip:o,showCompatibleTip:s,canvasClickTip:a}}export{c as u};
