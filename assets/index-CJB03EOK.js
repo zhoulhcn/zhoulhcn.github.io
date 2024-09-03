@@ -1,4 +1,4 @@
-import{P as B,O as J}from"./index-Ct6TisQj.js";var M={exports:{}};/*!
+import{P as B,O as J}from"./index-BZCZqjyR.js";var M={exports:{}};/*!
  * clipboard.js v2.0.11
  * https://clipboardjs.com/
  *
